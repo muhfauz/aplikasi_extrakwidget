@@ -21,29 +21,15 @@ class MyApp extends StatelessWidget {
         ),
         body: Container(
           margin: EdgeInsets.all(10),
-          child: ListView(
-            children: <Widget>[
-              DaftarNama(
-                imageUrl: 'https://picsum.photos/id/2/200/300',
+          child: ListView.builder(
+            itemCount: 100,
+            itemBuilder: (context, index) {
+              return DaftarNama(
+                imageUrl: 'https://picsum.photos/id/$index/200/300',
                 nama: faker.person.name(),
                 desc: faker.lorem.sentence(),
-              ),
-              DaftarNama(
-                imageUrl: 'https://picsum.photos/id/3/200/300',
-                nama: faker.person.name(),
-                desc: faker.lorem.sentence(),
-              ),
-              DaftarNama(
-                imageUrl: 'https://picsum.photos/id/4/200/300',
-                nama: faker.person.name(),
-                desc: faker.lorem.sentence(),
-              ),
-              DaftarNama(
-                imageUrl: 'https://picsum.photos/id/5/200/300',
-                nama: faker.person.name(),
-                desc: faker.lorem.sentence(),
-              ),
-            ],
+              );
+            },
           ),
         ),
       ),
